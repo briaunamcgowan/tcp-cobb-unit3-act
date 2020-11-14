@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // questions
+        var q = ["2 + 2 = ?", "0 + 0 = ?", "3 + 1 = ?", "6 + 7 = ?", "2 + 7 = ?", "9 + 0 = ?", "2 + 9 = ?", "8 + 5 ?", " What color is the Sky?", "Red + Blue = ?"];
+        //answers
+        var a = ["4", "0", "4","13","9","9","11","13","blue","purple"];
+        //current user score
+        var userScore = 0;
+        for(var i = 0; i < q.length; i++){
+            //randomly generate a num
+            var randomNum = Math.floor(Math.random()*10);
+            //console.log(randomNum);
+            
+            //prompt user to answer question
+            var currentA = prompt(q[randomNum]);
+            if(currentA === a[randomNum]){
+                userScore = userScore + 1;
+                alert("Correct!! Your current score is: " + userScore);
+            }else{
+                userScore = userScore - 1;
+                if(userScore < 0){
+                    userScore = 0;
+                }
+                alert("Incorrect! Your current score is: " + userScore);
+            }
+            if(i == 9){
+                alert("Game over! Your score is: " + userScore);
+            }
+        }
+    </script>
+</body>
+</html>
